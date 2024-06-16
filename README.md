@@ -12,6 +12,12 @@ Este proyecto es una API que utiliza Express y GraphQL para interactuar con la A
 Clona este repositorio:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
-cd YOUR_REPOSITORY
+git clone https://github.com/jorge7712051/apiRickAndMorty.git
+cd apiRickAndMorty
+```
+
+Ejecuta el siguiente comando:
+
+```bash
+docker-compose up --build
 ```
