@@ -19,5 +19,5 @@ cd apiRickAndMorty
 Ejecuta el siguiente comando:
 
 ```bash
-docker-compose up --build
+docker-compose up -d --build
 ```
