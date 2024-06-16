@@ -1,0 +1,38 @@
+version: "3.8"
+
+services:
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: rickandmortydb
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  redis:
+    image: "redis:alpine"
+    ports:
+      - "6379:6379"
+
+  app:
+    build: .
+    ports:
+      - "4000:4000"
+    depends_on:
+      - db
+    environment:
+      NODE_ENV: development
+      DB_HOST: db
+      DB_USER: user
+      DB_PASSWORD: 1234
+      DB_NAME: rickandmortydb
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: sh -c "npx sequelize-cli db:migrate && node ./seeders/seed.js && npx nodemon server.js"
+
+volumes:
+  db-data:
