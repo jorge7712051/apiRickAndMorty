@@ -9,6 +9,10 @@ module.exports = {
         type: Sequelize.INTEGER,
         autoIncrement: true,
       },
+      characterId: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+      },
       name: {
         type: Sequelize.STRING,
         allowNull: false,
@@ -25,6 +29,9 @@ module.exports = {
       origin: {
         type: Sequelize.STRING,
       },
+      image: {
+        type: Sequelize.STRING,
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
@@ -36,7 +43,7 @@ module.exports = {
     });
 
     await queryInterface.addConstraint("FavoritesCharacters", {
-      fields: ["id"],
+      fields: ["characterId"],
       type: "unique",
       name: "unique_character_id",
     });

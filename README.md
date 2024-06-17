@@ -1,23 +1,29 @@
 # Rick and Morty GraphQL API
 
-Este proyecto es una API que utiliza Express y GraphQL para interactuar con la API de Rick y Morty. Permite realizar búsquedas de personajes con filtración por status, especie, género, nombre y origen. Además, se conecta a una base de datos relacional usando Sequelize y almacena en caché los resultados de las búsquedas con Redis.
+This project is an API that uses Express and GraphQL to interact with the Rick and Morty API. It allows searching for characters with filtering by status, species, gender, name, and origin. Additionally, it connects to a relational database using Sequelize and caches the search results with Redis.
 
-## Requisitos
+## Getting Started
+
+### Requirements
 
 - [Docker](https://www.docker.com/get-started)
 - [Docker Compose](https://docs.docker.com/compose/install/)
 
-## Instalación
+### Installation
 
-Clona este repositorio:
+1. Clone this repository:
 
 ```bash
 git clone https://github.com/jorge7712051/apiRickAndMorty.git
 cd apiRickAndMorty
 ```
 
-Ejecuta el siguiente comando:
+2. Run the following command:
 
 ```bash
 docker-compose up -d --build
 ```
+
+## License
+
+This project is licensed under the MIT License.

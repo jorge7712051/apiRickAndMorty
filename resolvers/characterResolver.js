@@ -20,6 +20,7 @@ const characterResolver = {
               status
               species
               gender
+              image
               origin {
                 name
               }
@@ -48,6 +49,7 @@ const characterResolver = {
             status: character.status,
             species: character.species,
             gender: character.gender,
+            image: character.image,
             origin: { name: character.origin.name },
           })
         );

@@ -16,11 +16,13 @@ const favoritesCharacterResolver = {
     addFavoriteCharacter: async (_, { input }) => {
       try {
         const newFavoriteCharacter = await db.FavoritesCharacter.create({
+          characterId: input.characterId,
           name: input.name,
           status: input.status,
           species: input.species,
           gender: input.gender,
           origin: input.origin,
+          image: input.image,
         });
         return newFavoriteCharacter;
       } catch (error) {

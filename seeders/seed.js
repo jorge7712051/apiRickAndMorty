@@ -12,6 +12,7 @@ const seedDatabase = async () => {
             status
             species
             gender
+            image
             origin {
               name
             }
@@ -27,11 +28,13 @@ const seedDatabase = async () => {
     const characters = response.data.data.characters.results
       .slice(0, 15)
       .map((character) => ({
+        characterId: character.id,
         name: character.name,
         status: character.status,
         species: character.species,
         gender: character.gender,
         origin: character.origin.name,
+        image: character.image,
       }));
 
     await db.FavoritesCharacter.bulkCreate(characters);
